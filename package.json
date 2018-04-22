@@ -1,26 +1,29 @@
 {
-  "name": "guttenberg-search",
+  "name": "RCMPhack",
   "version": "0.0.1",
-  "description": "Source code for Elasticsearch tutorial using 100 classic open source books.",
+  "description": "Source code for RCMP Hackathon 2018.",
+  "main": "server/index.js",
   "scripts": {
     "start": "node --inspect=0.0.0.0:9229 server/app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/triestpa/guttenberg-search.git"
+    "url": "git+https://github.com/redhio/RCMPhack.git"
   },
-  "author": "patrick.triest@gmail.com",
+  "author": "info@redh.io",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/triestpa/guttenberg-search/issues"
+    "url": "https://github.com/redhio/RCMPhack/issues"
   },
-  "homepage": "https://github.com/triestpa/guttenberg-search#readme",
+  "homepage": "https://github.com/redhio/RCMPhack#readme",
   "dependencies": {
-    "elasticsearch": "13.3.1",
     "joi": "13.0.1",
     "koa": "2.4.1",
     "koa-joi-validate": "0.5.1",
     "koa-router": "7.2.1",
-    "vue-d2b": "^1.0.11"
+    "vue-d2b": "^1.0.11",
+    "elasticsearch": "^14.2.2",
+    "node-gyp": "^3.6.2",
+    "web3": "^1.0.0-beta.34"
   }
 }
