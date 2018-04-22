@@ -1,3 +1,7 @@
+// importing custom components
+
+import ActivityGraph from "./components/ActivityGraph/ActivityGraph.vue"
+
 const vm = new Vue ({
   el: '#vue-instance',
   data () {
@@ -15,6 +19,9 @@ const vm = new Vue ({
   },
   async created () {
     this.searchResults = await this.search() // Search for default term
+  },
+  components: {
+    'activity-graph' : ActivityGraph,
   },
   methods: {
     /** Debounce search input by 100 ms */
@@ -84,6 +91,6 @@ const vm = new Vue ({
       document.body.style.overflow = 'auto'
       this.selectedParagraph = null
     },
-    
+
   }
 })
