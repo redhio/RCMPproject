@@ -1,8 +1,8 @@
 const elasticsearch = require('elasticsearch')
 
 // Core ES variables for this project
-const index = 'library'
-const type = 'novel'
+const index = 'library' /* 'mainnet */
+const type = 'novel' /*transaction */
 const port = 9200
 const host = process.env.ES_HOST || 'localhost'  /**replace localhost with index.redh.io, remove process.env...*/
 const client = new elasticsearch.Client({ host: { host, port } })

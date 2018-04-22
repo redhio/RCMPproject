@@ -1,10 +1,10 @@
 Web3 = require('web3')
 //web3 = new Web3(new Web3.providers.HttpProvider("http://192.168.0.10:8545"));
-web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+web3 = new Web3(new Web3.providers.HttpProvider("https://mainnet.infura.io"));
 //console.log(web3.eth.accounts[0])
 const elasticsearch = require('elasticsearch');
 const esClient = new elasticsearch.Client({
-  host: 'index.redh.io:9200',
+  host: 'localhost:9200',
   log: 'error'
 });
 
@@ -48,13 +48,13 @@ function successBlockCallback(block){
       block.transactions.forEach( function(e) {
 		//console.log(e.from)
         if (myaccount == "*" || myaccount == e.from || myaccount == e.to ) {
-            txnRaw = "{" 
+            txnRaw = "{"
 		    + "tx hash:" + e.hash + ",\n"
             + "nonce:" + e.nonce + ","
             + "blockHash : " + e.blockHash + ",\n"
             + "blockNumber : " + e.blockNumber + ",\n"
             + "transactionIndex : " + e.transactionIndex + ",\n"
-            + "from : " + e.from + ",\n" 
+            + "from : " + e.from + ",\n"
             + "to : " + e.to + ",\n"
             + "value : " + e.value + ",\n"
             + "timestamp : " + block.timestamp + ",\n"
@@ -62,9 +62,9 @@ function successBlockCallback(block){
             + "gasPrice                                                                                                                                                                                                      : " + e.gasPrice + ",\n"
             + "gas             : " + e.gas + ",\n"
 			+ "input           : " + e.input + "}";
-			index="ropsten";
+			index="mainnet";
 			type="transaction";
-			
+
 			bulkBody.push({
 				"tx hash": e.hash,
 				"nonce" : e.nonce,
@@ -88,13 +88,13 @@ function successBlockCallback(block){
 				}
 
 			});
-			
+
 			console.log(bulkBody);
-			
-			
+
+
         }
       });
-	  bulkIndex("ropsten", "transaction", bulkBody).then(successIndexCallback, failureIndexCallback);
+	  bulkIndex("mainnet", "transaction", bulkBody).then(successIndexCallback, failureIndexCallback);
 	  //esClient.bulk({body: bulkBody}).then(successIndexCallback, failureIndexCallback);
     }
 
@@ -118,16 +118,16 @@ function getTransactionsByAccount(myaccount, startBlockNumber, endBlockNumber) {
       console.log("Searching block " + i);
     }
     var block = web3.eth.getBlock(i, true).then(successBlockCallback, failureBlockCallback);
-	
+
   }
 }
 
 
 //getTransactionsByAccount("0x2cd7e2e65bb6ef5f233f9dea83736cf8195fe70d",5430907,5431007)
 myaccount = "0x00923682a1c598cf1AdD82bfd8b2C93a7A9029C0";
-getTransactionsByAccount(myaccount,2910225,2964033)
+getTransactionsByAccount(myaccount,5420907,5530907)
 
-var info = web3.eth.getBlock(2910225)
+var info = web3.eth.getBlock(5430907)
 .then(console.log)
 
 
@@ -138,5 +138,3 @@ const indexTransaction = function indexTransaction() {
   const transactionsRaw = fs.readFileSync('data.json');
   bulkIndex('library', 'article', articles);
 };
-
-
