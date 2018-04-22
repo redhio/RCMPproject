@@ -10,6 +10,15 @@ body { font-family: 'EB Garamond', serif; }
 .book-modal > button { width: 100%; }
 .search-results .mui-divider { margin: 14px 0; }
 
+.mui-page-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  line-height: 35px;
+  flex-direction: column;
+  text-align: center;
+  align-items: center
+}
+
 .search-results {
   display: flex;
   flex-direction: row;
