@@ -2,7 +2,7 @@
   "name": "RCMPhack",
   "version": "0.0.1",
   "description": "Source code for RCMP Hackathon 2018.",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "start": "node --inspect=0.0.0.0:9229 server/app.js"
   },
