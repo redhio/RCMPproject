@@ -2,6 +2,7 @@
   "name": "RCMPhack",
   "version": "0.0.1",
   "description": "Source code for RCMP Hackathon 2018.",
+  "main": "index.js",
   "scripts": {
     "start": "node --inspect=0.0.0.0:9229 server/app.js"
   },
@@ -9,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/redhio/RCMPhack.git"
   },
-  "author": "patrick.triest@gmail.com",
+  "author": "info@redh.io",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/redhio/RCMPhack/issues"
