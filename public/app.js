@@ -84,14 +84,6 @@ const vm = new Vue ({
       document.body.style.overflow = 'auto'
       this.selectedParagraph = null
     },
-    /** Call chart using chart.js */
-    createChart(chartId, chartData) {
-    const ctx = document.getElementById(chartId);
-    const myChart = new Chart(ctx, {
-      type: chartData.type,
-      data: chartData.data,
-      options: chartData.options,
-    });
-  }
+    
   }
 })
