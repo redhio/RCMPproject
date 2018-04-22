@@ -21,3 +21,6 @@ install docker compose
 Book mapping is defined here in server/connection.js
 
  **Here we are defining a mapping for the book index. An Elasticsearch index is roughly analogous to a SQL table or a MongoDB collection. Adding a mapping allows us to specify each field and datatype for the stored documents. Elasticsearch is schema-less, so we don't technically need to add a mapping, but doing so will give us more control over how the data is handled.**
+
+
+Search functions (in search.js) are linked to API via /server/api.js -> note endpoints comment in app.js
