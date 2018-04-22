@@ -1,0 +1,12 @@
+Readme file
+
+Following this tutorial - https://blog.patricktriest.com/text-search-docker-elasticsearch/
+
+To setup this search I had to do the following;
+
+install docker
+  https://docs.docker.com/install/
+install docker compose
+  https://docs.docker.com/compose/install/#install-composehttps://docs.docker.com/compose/install/#install-compose
+
+  
