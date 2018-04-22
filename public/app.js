@@ -8,7 +8,6 @@ const vm = new Vue ({
       searchResults: [], // Displayed search results
       numHits: null, // Total search results found
       searchOffset: 0, // Search result pagination offset
-
       selectedParagraph: null, // Selected paragraph object
       bookOffset: 0, // Offset for book paragraphs being displayed
       paragraphs: [] // Paragraphs being displayed in book preview window
@@ -84,6 +83,15 @@ const vm = new Vue ({
     closeBookModal () {
       document.body.style.overflow = 'auto'
       this.selectedParagraph = null
-    }
+    },
+    /** Call chart using chart.js */
+    createChart(chartId, chartData) {
+    const ctx = document.getElementById(chartId);
+    const myChart = new Chart(ctx, {
+      type: chartData.type,
+      data: chartData.data,
+      options: chartData.options,
+    });
+  }
   }
 })

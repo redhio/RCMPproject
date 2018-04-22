@@ -1,4 +1,4 @@
-body { font-family: 'EB Garamond', serif; }
+body { font-family: 'Arial', sans-serif; }
 
 .mui-textfield > input, .mui-btn, .mui--text-subhead, .mui-panel > .mui--text-headline {
   font-family: 'Open Sans', sans-serif;
@@ -12,8 +12,9 @@ body { font-family: 'EB Garamond', serif; }
 
 .mui-page-title {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.8rem;
-  line-height: 35px;
+font-size: 3rem:
+  font-weight: bold;
+  line-height: 45px;
   flex-direction: column;
   text-align: center;
   align-items: center

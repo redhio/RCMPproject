@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet" type="text/css" />
   <link href="https://cdn.muicss.com/mui-0.9.20/css/mui.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,700|Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Arial" rel="stylesheet">
   <link href="styles.css" rel="stylesheet" />
 </head>
 <body>
@@ -17,10 +17,14 @@
     <div class="mui-page-title">
         <img src="./assets/64652.svg">
             <h1>RCMP CryptoTracker</h1>
-            <h3>Enter your wallet address below!</h3>
-
+            <h2>Enter your wallet address below!</h2>
     </div>
 
+    <template>
+      <div id="app">
+        <canvas id="planet-chart"></canvas>
+      </div>
+    </template>
 
     <!-- Search Bar Header -->
     <div class="mui-panel">
