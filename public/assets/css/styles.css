@@ -110,7 +110,5 @@ font-size: 3rem:
        padding: 20px;
    }
    .chart{
-       height: 100vw;
-       max-height: 700px;
-       margin-top: 40px;
-     }
+    height: 500px;
+  }

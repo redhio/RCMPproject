@@ -1,6 +1,6 @@
 // importing custom components
 
-import ActivityGraph from "./components/ActivityGraph/ActivityGraph.vue"
+ import { ChartSankey } from 'vue-d2b';
 
 const vm = new Vue ({
   el: '#vue-instance',
@@ -20,9 +20,49 @@ const vm = new Vue ({
   async created () {
     this.searchResults = await this.search() // Search for default term
   },
-  components: {
-    'activity-graph' : ActivityGraph,
-  },
+
+  export default {
+    data () {
+      return {
+        // The chart data varies from chart to chart. To see what type of data
+        // to provide each chart type head over to the d2bjs.org docs.
+        chartData: {
+          nodes: [
+            {name: 'Node A'},
+            {name: 'Node B'},
+            {name: 'Node C'},
+            {name: 'Node D'},
+            {name: 'Node E'}
+          ],
+          links: [
+            {source: 'Node A', target: 'Node E', value: 2},
+            {source: 'Node A', target: 'Node C', value: 2},
+            {source: 'Node B', target: 'Node C', value: 2},
+            {source: 'Node B', target: 'Node D', value: 2},
+            {source: 'Node C', target: 'Node D', value: 2},
+            {source: 'Node C', target: 'Node E', value: 2},
+            {source: 'Node D', target: 'Node E', value: 4}
+          ]
+        },
+
+        // There are many configuration options for each chart type, checkout
+        // the d2bjs.org docs for more information.
+        chartConfig (chart) {
+          chart
+            // returns the d2b svg sankey generator
+            .sankey()
+            // returns the d3 sankey generator
+            .sankey()
+            // now configure the d3 sankey generator through method chaining
+            .nodePadding(50)
+        }
+      }
+    },
+
+    components: {
+      chartSankey
+    }
+  }
   methods: {
     /** Debounce search input by 100 ms */
     onSearchInput () {
@@ -90,7 +130,7 @@ const vm = new Vue ({
     closeBookModal () {
       document.body.style.overflow = 'auto'
       this.selectedParagraph = null
-    },
+    }
 
   }
 })
