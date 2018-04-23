@@ -26,3 +26,11 @@ Book mapping is defined here in server/connection.js
 Search functions (in search.js) are linked to API via /server/api.js -> note endpoints comment in app.js
 
 Chart.js tutorial here -> https://alligator.io/vuejs/vue-chart-js/
+
+
+Install:
+git clone https://github.com/redhio/RCMPhack.git
+npm update
+
+Search Agent:
+node --max_old_space_size=4096 server/getTransactionsByBlock.js
